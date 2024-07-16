@@ -1,0 +1,19 @@
+import kotlin.random.Random
+
+class Dog(name: String, energy: Int, age: Int, weight: Double, maxAge: Int) : Animal(name,energy,age,weight,maxAge) {
+    override fun move() {
+        super.move()
+        println("Собака бежит")
+    }
+
+    fun theBirchDog(): Dog {
+        val newEnergy = Random.nextInt(1, 11)
+        val newWeight = Random.nextInt(1, 6)
+        val newDog = Dog(name, 0, maxAge, newWeight.toDouble(), newEnergy,)
+        println("Родился новый щенок ${name}")
+        println("Возвраст ${newDog.age}")
+        println("Энергия ${newDog.energy}")
+        println("Вес ${newDog.weight}")
+        return newDog
+    }
+}

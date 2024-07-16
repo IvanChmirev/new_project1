@@ -1,0 +1,19 @@
+import kotlin.random.Random
+
+class Bird(name: String, energy: Int, age: Int, weight: Double, maxAge: Int) : Animal(name,energy,age,weight,maxAge) {
+    override fun move() {
+        super.move()
+        println("Птица летит")
+    }
+
+    fun theBirchCBird(): Bird {
+        val newEnergy = Random.nextInt(1, 11)
+        val newWeight = Random.nextInt(1, 6)
+        val newBird = Bird(name, 0, maxAge, newWeight.toDouble(), newEnergy,)
+        println("Родилась новая птица ${name}")
+        println("Возвраст ${newBird.age}")
+        println("Энергия ${newBird.energy}")
+        println("Вес ${newBird.weight}")
+        return newBird
+    }
+}

@@ -1,0 +1,41 @@
+import kotlin.random.Random
+
+open class Animal(val name: String, var energy: Int, var age: Int, var weight: Double, val maxAge: Int) {
+    val isTooOld: Boolean
+        get() = age >= maxAge
+    fun sleep() {
+        energy += 5
+        age += 1
+        println("Ivan sleeping")
+    }
+    fun eat() {
+        energy += 3
+        weight += 1
+        age += 1
+        println("Ivan eating")
+    }
+    open fun move() {
+        energy -= 5
+        weight -= 1
+        age += 1
+        println("")
+    }
+    private fun  tryIncrementAge() {
+        if (Random.nextBoolean()) {
+            age++
+            println("animal the animal has become 1 year older")
+        }
+    }
+     open fun theBirchChild() : Animal {
+        val newEnergy = Random.nextInt(1, 11)
+        val newWeight = Random.nextInt(1,6)
+        val newAnimal = Animal(name,0, maxAge, newWeight.toDouble(),newEnergy,)
+        println("Родилось новое животное ${name}")
+        println("Возвраст ${newAnimal.age}")
+        println("Энергия ${newAnimal.energy}")
+        println("Вес ${newAnimal.weight}")
+        return newAnimal
+    }
+
+
+
