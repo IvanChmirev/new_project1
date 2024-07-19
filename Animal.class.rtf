@@ -1,8 +1,13 @@
 import kotlin.random.Random
+open class Animal(val name: String, var energy: Int, var age: Int, var weight: Double, val maxAge: Int, currentAge:Int = 0) {
+    override fun toString(): String {
+        return "Animal(name=$name, energy=$energy, age=$age, weight=$weight, maxAge=$maxAge)"
+    }
 
-open class Animal(val name: String, var energy: Int, var age: Int, var weight: Double, val maxAge: Int) {
+
     val isTooOld: Boolean
         get() = age >= maxAge
+
     fun sleep() {
         energy += 5
         age += 1
@@ -36,6 +41,7 @@ open class Animal(val name: String, var energy: Int, var age: Int, var weight: D
         println("Вес ${newAnimal.weight}")
         return newAnimal
     }
+}
 
 
 

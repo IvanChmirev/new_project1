@@ -1,21 +1,29 @@
 fun main() {
-    val string = "blue-red-green-yellow"
-    println(string.split("-"))
-    val str = " Hello, World,I like playing, Update Tower Defense"
-    println(str.replace("o", "0"))
-    val shiftString = str.map { char -> char - 3 }.joinToString("")
-    println(shiftString)
-    println(str.replace("U", "4"))
-    println(str.replace("s", "5"))
-    val shiftedString = str.map { char -> char - 1 }.joinToString("")
-    println(shiftedString)
-    println(str.replace("I like playing Update Tower Defense", "_"))
-    val shiftdString = str.map { char -> char - 4 }.joinToString("")
-    println(shiftdString)
-    println(str.reversed())
-    val originalString = "F2p)v\"y233{0->c}ttelciFc"
-                val halfLength = originalString.length / 12
-                val firstHalf = originalString.substring(2, halfLength)
-                val secondHalf = originalString.substring(halfLength)
+     val animals = Animal("Ivan", 10, 2, 150.0, 30)
+        val babyAnimal = Animal("Тигр",9,30,1.0,1)
+        val bird = Bird("Орёл",9, 15,20.0,20)
+        val fish = Fish("Окунь",5,2,14.4,25)
+        val dog = Dog("Тёма",33,8,20.0,15)
+        val babyBird = Bird("Ворона",3,0,3.0,40)
+        val babyFish = Fish("Карась",2,0,2.0,20)
+        val babyDog = Dog("Шарик", 1,0,4.0,30)
+        val natureReserve = NatureReserve(listOf(
+        Animal("Кеша",1,0,2.0,10,15),
+        Animal("Щука",2,4,20.0,20,15),
+        Animal("Рекс",4,15,50.0,20,100)
+        ))
+        natureReserve.printAnimals()
 
+        println(animals)
+        println(animals.isTooOld)
+        animals.sleep()
+        animals.eat()
+        animals.move()
+        val parentAnimal = babyAnimal.theBirchChild()
+        val parentBird = babyBird.theBirchCBird()
+        val parentFish = babyFish.theBirchFish()
+        val parentDog = babyDog.theBirchDog()
+        bird.move()
+        fish.move()
+        dog.move()
 }
